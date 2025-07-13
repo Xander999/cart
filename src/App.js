@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import CartApp from './CartApp';
 
 const List = () => {
   return (
@@ -27,14 +28,14 @@ const CarParts = () => {
   );
 };
 
-const Cart = () => {
-  return (
-    <div>
-      <h2>Your Cart</h2>
-      <p>No items in the cart.</p>
-    </div>
-  );
-};
+// const Cart = () => {
+//   return (
+//     <div>
+//       <h2>Your Cart</h2>
+//       <p>No items in the cart.</p>
+//     </div>
+//   );
+// };
 
 const UserDetails = () => {
   return (
@@ -47,7 +48,7 @@ const UserDetails = () => {
 };
 
 function App() {
-  const [activeComponent, setActiveComponent] = useState('list');
+  const [activeComponent, setActiveComponent] = useState('cart');
   return (
     <div className="App">
       <header style={{ position: 'fixed', top: 0, width: '100%', backgroundColor: '#282c34', color: 'white', padding: '10px 0', zIndex: 1000 }}>
@@ -63,7 +64,7 @@ function App() {
       <main style={{ marginTop: '100px', marginBottom: '100px', padding: '20px' }}>
         {activeComponent === 'list' && <List />}
         {activeComponent === 'carParts' && <CarParts />}
-        {activeComponent === 'cart' && <Cart />}
+        {activeComponent === 'cart' && <CartApp />}
         {activeComponent === 'userDetails' && <UserDetails />}
       </main>
 
